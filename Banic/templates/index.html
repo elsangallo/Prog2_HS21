@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<title>Bank</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+	</head>
+	<body>
+		<h1>Hallo {{ name }}!</h1>
+		<h2 > Bitte wähle eine Funktion für dein Bankkonto aus</h2>
+		<a href="{{ url_for('ein_auszahlen')}}">Ein -/ Auszahlen</a>
+		<a href="{{ url_for('uebertragen')}}">Geld übertragen</a>
+		<a href="{{ url_for('kontostand')}}">Kontostand anzeigen</a>
+
+	</body>
+</html>
