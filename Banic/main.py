@@ -18,27 +18,27 @@ def ein_auszahlen (kontonummer, betrag):
                                                      # der alte kontostand wird mit dem gewünschten betrag a verrechnet
         print (globals()[konto])
     else:
-        print ("Kein existierendes Konto ausgewählt.")
+        print ("Kein existierendes Konto ausgewählt.") # falls eine zahl eingegeben wird, welcche nicht einem konto entspricht erscheint dieser text, dadurch können fehlermeldungen vermieden werden.
 
 
-def uebertragen (kontonummer_von, kontonummer_zu, betrag):
-    if kontonummer_von in range (1, 4) and kontonummer_zu in range (1, 4):
-        str_kontonummer_von = str(kontonummer_von)
-        str_kontonummer_zu = str(kontonummer_zu)
-        konto_von = 'konto' + str_kontonummer_von
-        konto_zu = 'konto' + str_kontonummer_zu
-        globals()[konto_von] = globals()[konto_von] - betrag
-        globals()[konto_zu] = globals()[konto_zu] + betrag
-        print ("Der Kontostand von " + str(konto_von) + " ist neu " + str(globals()[konto_von]))
-        print ("Der Kontostand voon " + str(konto_zu) + " ist neu " + str(globals()[konto_zu]))
+def uebertragen (kontonummer_von, kontonummer_zu, betrag): # funktion zum übertragen von beträgen
+    if kontonummer_von in range (1, 4) and kontonummer_zu in range (1, 4): # stellt sicher, dass eine gültige kontonummer eingegeben wird
+        str_kontonummer_von = str(kontonummer_von) # int wird in string umgewandelt
+        str_kontonummer_zu = str(kontonummer_zu) # =
+        konto_von = 'konto' + str_kontonummer_von # variablennamen werden zusammengesetzt
+        konto_zu = 'konto' + str_kontonummer_zu # =
+        globals()[konto_von] = globals()[konto_von] - betrag # betrag wird vom ausgangskonto subtrahiert
+        globals()[konto_zu] = globals()[konto_zu] + betrag # betrag wird zum eingangskonto addiert
+        print ("Der Kontostand von " + str(konto_von) + " ist neu " + str(globals()[konto_von])) # neuer kontostand vom ausgangskonto wird ausgegeben
+        print ("Der Kontostand voon " + str(konto_zu) + " ist neu " + str(globals()[konto_zu])) # neuer kontostand vom eingangskonto wird ausgegeben
     else:
-        print ("Eines oder beide der ausgewählten Konten existieren nicht.")
+        print ("Eines oder beide der ausgewählten Konten existieren nicht.") # wurde eine kontonummer ausgewählt, welches niccht exisitert wird dieser text ausgegeben, dadurch werden fehlermeldungen vermieden
 
 
-def kontostand (kontonummer):
-    if kontonummer in range(1, 4):
-        str_kontonummer = str(kontonummer)
-        konto = 'konto' + str_kontonummer
-        print (globals()[konto])
+def kontostand (kontonummer): # funktion zum kontostand
+    if kontonummer in range(1, 4): # stellt sicher, dass eine existtierende kontonummer eingegeben wird
+        str_kontonummer = str(kontonummer) # int wird in string umgewandelt
+        konto = 'konto' + str_kontonummer # variablen werden zusammengesetzt
+        print (globals()[konto]) # kontostand wird ausgegeben
     else:
-        print ("Kein existierendes Konto ausgewählt.")
+        print ("Kein existierendes Konto ausgewählt.") # erscheint wenn eine nicht existierende kontonummer eingegeben wurde, dadurch werden fehlermeldunngen vermiedens
