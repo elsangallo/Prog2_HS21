@@ -29,9 +29,21 @@ def ein_auszahlen(): # die funktion der url wird erstellt, wenn man draufklickt 
         return render_template('ein_auszahlen.html')
 
 
-@app.route("/uebertragen") # die url übertragen wird erstellt
+@app.route("/bank/uebertragen", methods=['GET', 'POST']) # die url übertragen wird erstellt
 def uebertragen(): # die funktion der url wird erstellt, wenn man draufklickt erscheint der untenstehende text
-    return "Wie viel Geld möchtest du übertragen?"
+    if request.metthod == 'POST':
+        kontonummer_von = request.form['kontonummer_von']
+        kontonummer_zu = request.form['kontonummer_zu']
+        betrag = int(request.form['betrag'])
+        konto_von = 'konto' + kontonummer_von
+        konto_zu = 'konto' + kontonummer_zu
+        globals()[konto_von] = globals()[konto_von] - betrag
+        globals()[konto_zu] = globals()[konto_zu] + betrag
+        answer1 = 'Der Kontostand von ' + konto_von + ' ist neu ' + str(globals()[konto_von])
+        answer2 = 'Der Kontostand von ' + konto_zu + ' ist neu ' + str(globals()[konto_zu])
+        return answer1 + answer2
+    else
+        return render_template('uebertragen.html')
 
 
 @app.route("/kontostand") # die url kontostand wird erstellt
