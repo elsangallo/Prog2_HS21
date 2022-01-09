@@ -46,10 +46,14 @@ def uebertragen(): # die funktion der url wird erstellt, wenn man draufklickt er
         return render_template('uebertragen.html')
 
 
-@app.route("/kontostand") # die url kontostand wird erstellt
+@app.route("/bank/kontostand", methods=['GET', 'POST']] # die url kontostand wird erstellt
 def kontostand(): # die funktion der url wird erstellt, wenn man draufklickt erscheint der untenstehende text
-    return "Dein Kontostand ist: "
-
+    if request.method == 'POST':
+        kontonummer = request.form['kontonummer']
+        konto = 'konto' + kontonummer
+        return str(globals()[konto])
+    else:
+        return render_template('kontostand.html')
 
 if __name__ == "__main__":
     app.run(debug=True, port=5001) # hiermit wird festgelegt, dass wenn die app startet das debugging ein und der port 5001 abgerufen wird
