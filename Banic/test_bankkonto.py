@@ -19,14 +19,14 @@ def bank(): # die funktion bank() führt die funktion render_template aus, womit
 
 @app.route('/bank/ein_auszahlen', methods=['GET', 'POST']) # die url ein_ausbezahlen wird erstellt
 def ein_auszahlen(): # die funktion der url wird erstellt, wenn man draufklickt ersccheinnt der untenstehende text
-    if request.method == 'POST':
-        kontonummer = request.form['kontonummer']
-        betrag = int(request.form['betrag'])
+    if request.method == 'POST': # stellt sicher das die richtige request methode verwendet wird
+        kontonummer = request.form['kontonummer'] # die kontonummer wird aus dem formularfeld kontonummer abgefragt
+        betrag = int(request.form['betrag']) # der betrag wird aus dem formularfeld betrag abgefragt
         konto = 'konto' + kontonummer
-        globals()[konto] = globals()[konto] + betrag
-        return 'Der neue Kontostand von ' + konto + ' ist jetzt ' + str(globals()[konto])
+        globals()[konto] = globals()[konto] + betrag # der neue kontostand wird im berechnet
+        return 'Der neue Kontostand von ' + konto + ' ist jetzt ' + str(globals()[konto]) # der neue kontostand wird ausgegeben
     else:
-        return render_template('ein_auszahlen.html')
+        return render_template('ein_auszahlen.html') # das tmeplate ein-auszahlen wird anufgerufen
 
 
 @app.route("/bank/uebertragen", methods=['GET', 'POST']) # die url übertragen wird erstellt

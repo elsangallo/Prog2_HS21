@@ -11,7 +11,7 @@ Konto4 = 0
 # Parameter a gibt an, wei viel ein- bzw. ausbezahlt werden soll.
 # Idee von: https://www.pythonpool.com/python-string-to-variable-name/
 def ein_auszahlen (kontonummer, betrag):
-    if kontonummer in range(1, 4):
+    if kontonummer in range(1, 4): # stellt sicher, dass eine gültige kontonummer eingegeben wurde
         str.kontonummer = str(kontonummer) # der int kontonummer wird in einen string umgewandelt, damit er mit dem anderen string "konto" zusammengefügt werden kann
         konto = 'konto' + str.kontonummer # die beiden strings werden zusammengefügt um den variablen namen der verschiedenen kontos zu generieren
         globals()[konto] = globals()[konto] + betrag # mit der funktion globals()[konto] wird auf die globalen variablen kont1, konto2 usw. zugegriffen
