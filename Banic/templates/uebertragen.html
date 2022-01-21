@@ -3,10 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <title>Übertragen</title>
+        <link href="{{ url_for('static', filename='/stylesheets/style.css') }}"/>
     </head>
     <body>
         <h1>Geld von Konten übertragen</h1>
-        <h2>Bitte gebe unten ein Sender- bzw. Empfängerkonto und den gewünschten Betrag ein.</h2>
+        <h2>Bitte geben Sie unten ein Sender- bzw. Empfängerkonto und den gewünschten Betrag ein.</h2>
         <form method="POST">
             Sender Kontonummer (von 1-4) <input type="text" name="kontonummer_von" placeholder="Kontonummer 1-4">
             Empfänger Kontonummer (von 1-4) <input type="text" name="kontonummer_zu" placeholder="Kontonummer 1-4">

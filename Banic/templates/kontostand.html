@@ -3,10 +3,11 @@
     <head>
         <meta charset="UTF-8">
         <title>Kontostand</title>
+        <link href="{{ url_for('static', filename='/stylesheets/style.css') }}"/>
     </head>
     <body>
         <h1>Kontostand anzeigen</h1>
-        <h2>Bitte gebe unten das Konto an, von welchem der Kontostand angezeigt werden soll.</h2>
+        <h2>Bitte geben Sie unten das Konto an, von welchem der Kontostand angezeigt werden soll.</h2>
         <form method="POST">
             Kontonummer (von 1-4): <input type="text" name="kontonummer" placceholder="Koontonummer 1-4">
             <button type="submit">Senden</button>

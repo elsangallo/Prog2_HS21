@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700&display=swap');
+
+html{
+  font-family: 'Lato', sans-serif;
+  }
+
+body{
+  background-image: url("hintergrund.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh
+  }
+
+body, h1, h2, form{
+  line-height: 2em;
+  margin: 5;
+  text-align: center
+  }
+
+body, h1{
+  font-size: 80px;
+  margin-top:250px;
+  line-height: 350px
+  }
+
+h2, form{
+  font-size: 50px
+  }
+
+button{
+  background-color: rgb(255, 187, 148);
+  border: none;
+  padding: 50px 80px;
+  text-align: center;
+  font-size: 30px;
+  transition: background-color 0.8s;
+  }
+
+button:hover{
+  background-color: rgb(98, 88, 76)
+  }
+
+input{
+  border: none;
+  padding: 50px 80px;
+  text-align: left;
+  font-size: 30px;
+  }

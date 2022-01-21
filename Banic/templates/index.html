@@ -3,11 +3,11 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Bank</title>
-		<link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+		<link href="{{ url_for('static', filename='/stylesheets/style.css') }}"/>
 	</head>
 	<body>
-		<h1>Hallo {{name}}!</h1>
-		<h2 > Bitte wähle eine Funktion für dein Bankkonto aus</h2>
+		<h1>Herzlich willkommen bei Ihrer Bank</h1>
+		<h2 > Bitte wählen Sie eine Funktion für Ihr Bankkonto aus</h2>
 		<a href="{{ url_for('ein_auszahlen')}}"><button>Ein -/ Auszahlen</button></a>
 		<a href="{{ url_for('uebertragen')}}"><button>Geld übertragen</button></a>
 		<a href="{{ url_for('kontostand')}}"><button>Kontostand anzeigen</button></a>
